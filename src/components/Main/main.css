@@ -1,0 +1,170 @@
+:root {
+  --bg-col: #25273D;
+  --inp-col: #9495A5;
+  --box-shad: rgba(194, 195, 214, 0.50);
+  --total-color: #9495A5;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.day {
+  --bg-col: #FFF;
+  --inp-col: #9495A5;
+  --box-shad: rgba(194, 195, 214, 0.50);
+  --total-color: #9495A5;
+}
+
+.main:not(.day) {
+  --bg-col: #25273D;
+  --inp-col: #767992;
+  --box-shad: rgba(0, 0, 0, 0.50);
+  --total-color: #5B5E7E;
+}
+
+.box {
+  width: 327px;
+  min-height: 48px;
+  border-radius: 5px;
+  background: var(--bg-col);
+  box-shadow: 0px 35px 50px -15px var(--box-shad);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#circle {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+}
+
+input {
+  border: none;
+  width: 255px;
+  height: 20px;
+  font-family: 'Josefin Sans';
+  background-color: var(--bg-col);
+  color: var(--inp-col);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.167px;
+}
+
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  color: var(--inp-col);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.167px;
+}
+
+.list {
+  border-radius: 5px;
+  background: var(--bg-col);
+  box-shadow: 0px 35px 50px -15px var(--box-shad);
+  min-height: 368px;
+}
+
+.count {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+}
+
+.count p {
+  color: var(--total-color);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.167px;
+}
+
+#clear:hover {
+  cursor: pointer;
+}
+
+.total {
+  width: 327px;
+  height: 48px;
+  border-radius: 5px;
+  background: var(--bg-col);
+  box-shadow: 0px 35px 50px -15px var(--box-shad);
+  margin: 16px 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  justify-content: center;
+  color: var(--total-color);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.194px;
+}
+
+.ttl {
+  cursor: pointer;
+}
+
+.active {
+  color: #3A7CFD;
+}
+
+@media screen and (min-width:1440px) {
+  .main {
+    gap: 24px;
+  }
+
+  .box {
+    width: 540px;
+    min-height: 64px;
+    gap: 24px;
+  }
+
+  #circle {
+    width: 24px;
+    height: 24px;
+    margin-left: 24px;
+  }
+
+  input {
+    border: none;
+    width: 444px;
+    height: 20px;
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  ::placeholder {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  .list {
+    min-height: 439px;
+  }
+
+  .count {
+    padding: 0 24px;
+  }
+
+  .count p {
+    font-size: 14px;
+    letter-spacing: -0.194px;
+  }
+
+  .total {
+    width: 540px;
+    height: 50px;
+    margin: 16px 0 40px;
+    gap: 22px;
+    font-size: 14px;
+    letter-spacing: -0.194px;
+  }
+}

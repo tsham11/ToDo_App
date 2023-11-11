@@ -1,0 +1,177 @@
+:root {
+  --item-inp-color: #494C6B;
+  --bord-bot-color: #E3E4F1;
+  --checked: #D1D2DA;
+}
+
+.item {
+  width: 327px;
+  min-height: 52px;
+  border-bottom: 1px solid var(--bord-bot-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dk {
+  --item-inp-color: #494C6B;
+  --bord-bot-color: #E3E4F1;
+  --checked: #D1D2DA;
+}
+
+.item:not(.dk) {
+  --item-inp-color: #C8CBE7;
+  --bord-bot-color: #393A4B;
+  --checked: #4D5067;
+}
+
+.content {
+  width: 287px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+label {
+  color: var(--item-inp-color);
+  font-family: 'Josefin Sans';
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.167px;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+/* The container */
+.container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  padding-left: 32px;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+/*  add a grey background color */
+.container input~.checkmark {
+  background-color: var(--bg-col);
+  border: 1px solid var(--bord-bot-color);
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+  background: linear-gradient(#55DDFF,
+      #C058F3);
+  border: none;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* ptichka */
+.container .checkmark:after {
+  left: 8px;
+  top: 5px;
+  width: 2px;
+  height: 7px;
+  border: solid #FFF;
+  border-width: 0 3px 2.5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* crossed item(checked) */
+.checked {
+  text-decoration: line-through;
+  color: var(--checked);
+}
+
+.checked label {
+  color: var(--checked);
+}
+
+#cross {
+  width: 12px;
+  height: 12px;
+}
+
+#cross:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width:1440px) {
+  .item {
+    width: 540px;
+    min-height: 63px;
+  }
+
+  .content {
+    width: 492px;
+    min-height: 24px;
+  }
+
+  label {
+    font-size: 18px;
+    letter-spacing: -0.25px;
+  }
+
+  .container {
+    height: 24px;
+    padding-left: 48px;
+  }
+
+  .checkmark {
+    height: 24px;
+    width: 24px;
+  }
+
+  /* ptichka */
+  .container .checkmark:after {
+    left: 10px;
+    top: 6px;
+    width: 3px;
+    height: 8px;
+    border-width: 0 3px 2.5px 0;
+  }
+
+  #cross {
+    width: 18px;
+    height: 18px;
+  }
+}

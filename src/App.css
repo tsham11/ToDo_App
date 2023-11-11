@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color-lg: #FAFAFA;
+  --bg-color-dark: #171823;
+  --total-color: #9495A5;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 200px;
+  background-position: top center;
+}
+
+.light {
+  background-image: url("./assets/bg-mobile-light.jpg");
+  background-color: var(--bg-color-lg);
+  --total-color: #9495A5;
+}
+
+body:not(.light) {
+  background-image: url("./assets/bg-mobile-dark.jpg");
+  background-color: var(--bg-color-dark);
+  --total-color: #5B5E7E;
+}
+
+.drag {
+  margin-bottom: 72px;
+  width: 327px;
+  height: 14px;
+  color: var(--total-color);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.194px;
+}
+
+@media screen and (min-width:1440px) {
+  body {
+    background-size: 100% 300px;
+  }
+
+  .light {
+    background-image: url("./assets/bg-desktop-light.jpg");
+  }
+
+  body:not(.light) {
+    background-image: url("./assets/bg-desktop-dark.jpg");
+  }
+
+  .drag {
+    margin-bottom: 52px;
+    width: 540px;
+    height: 14px;
+  }
+}
